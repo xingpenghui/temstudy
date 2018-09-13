@@ -1,0 +1,17 @@
+#spring:
+#  freemarker:
+#    allow-request-override: false
+#    cache: true
+#    charset: UTF-8
+#    content-type: text/html
+#    check-template-location: true
+#    expose-request-attributes: false
+#    expose-session-attributes: false
+#    expose-spring-macro-helpers: false
+
+spring:
+  thymeleaf:
+    cache: true
+
+
+

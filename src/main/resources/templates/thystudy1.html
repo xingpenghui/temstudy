@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf基本使用</title>
+</head>
+<body>
+
+<h1>
+    基本应用
+</h1>
+<h2 th:text="${msg}"> ,带来的问候</h2>
+<h2 th:text="${num}"> ,数字</h2>
+<!--日期格式化-->
+<h2 th:text="${#dates.format(dt,'yyyy-MM-dd HH:mm:ss')}"> ,日期</h2>
+
+<h4 th:text="${msg} eq 'Hello'?'一致':'错误'"></h4>
+<h4 th:text="${msg} eq ${msg2} ?'一致':'错误'"></h4>
+<h4 th:text="${msg3}?:'默认值' "></h4>
+<h4 th:text="${#numbers.formatDecimal(num1,1,2)}"></h4>
+
+<h2 th:if="${num} gt 2">
+    哈哈哈哈哈，吃饭吧！！！
+</h2>
+<h1>集合的遍历</h1>
+<ul >
+    <li th:each="s:${stulist}" >
+        <h5 th:text="${s.name}"></h5>
+        <ol>
+            <li th:text="'学号'+ ${s.no}"></li>
+            <li th:text="|姓名,${s.name}|"></li>
+            <li  th:text="|性别,${s.sex}|"></li>
+            <li  th:text="|生日,${#dates.format(s.birthday,'yyyy-MM-dd HH:mm:ss')}|"></li>
+        </ol>
+    </li>
+
+</ul>
+</body>
+</html>
